@@ -1,0 +1,66 @@
+separator_block_width=10
+
+[apt-upgrades]
+command=~/.config/i3blocks/scripts/apt-upgrades
+signal=1
+interval=once
+#PENDING_SYMBOL="\uf021 "
+#SYMBOL_ONLY=1
+#ALWAYS_PRINT=0
+#PENDING_COLOR="#00FF00"
+#NONPENDING_COLOR="#FFFFFF"
+
+################## CPU ###########################
+[load]
+label= 
+command=~/.config/i3blocks/scripts/load_average
+interval=5
+color=#6c71c4
+separator=false
+
+[temp]
+label=
+command=echo "$(sensors coretemp-isa-0000 | awk '/Core/ {print $3}')"
+interval=10
+color=#946cc4
+###################################################
+
+################ INTERNET #######################
+[ssid]
+label=
+command=echo "$(iw dev wlo1 link | grep SSID | cut -d " " -f 2-)"
+color=#d33682
+interval=5
+separator=false
+
+[wireless]
+instance=wlo1
+command=~/.config/i3blocks/scripts/iface
+color=#00FF00
+interval=10
+separator=false
+
+[strength]
+label=@
+command=~/.config/i3blocks/scripts/wifi
+interval=3
+color=#cb4b16
+##################################################
+
+[volume]
+label=
+command=~/.config/i3blocks/scripts/volume
+interval=1
+signal=10
+color=#d70a53
+
+[battery]
+label=⚡
+command=~/.config/i3blocks/scripts/battery BAT
+interval=5
+
+[time]
+label=
+command=date '+%a %d-%m-%y%l:%M'
+interval=1
+color=#50C878

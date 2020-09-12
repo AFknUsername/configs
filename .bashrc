@@ -166,3 +166,9 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
+
+update() {
+    sudo apt update
+    sleep 1
+    sudo apt upgrade -y
+}

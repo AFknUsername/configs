@@ -2,7 +2,8 @@
 
 # Make repo untracked
 cd .cfg
-git config --local status.showUntrackedFiles no
+config config --local status.showUntrackedFiles no
+config push --set-upstream origin master
 cd $HOME
 
 # Install all programs using apt

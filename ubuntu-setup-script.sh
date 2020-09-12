@@ -1,11 +1,5 @@
 #! /bin/bash
 
-# Make repo untracked
-cd .cfg
-config config --local status.showUntrackedFiles no
-config push --set-upstream origin master
-cd $HOME
-
 # Install all programs using apt
 echo "INSTALLING PACKAGES"
 sudo apt update -q && sudo apt upgrade -y -q

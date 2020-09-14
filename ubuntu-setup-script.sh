@@ -13,7 +13,8 @@ sudo apt install -y \
     pkg-config libfreetype6-dev\
     libfontconfig1-dev \
     libxcb-xfixes0-dev \
-    python3-neovim
+    python3-neovim fonts-font-awesome \
+    xorg compton
 echo "DONE."
 
 # Install brave
@@ -32,6 +33,7 @@ git clone https://github.com/alacritty/alacritty.git
 cd alacritty
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source $HOME/.cargo/env
 rustup override set stable
 rustup update stable
 cargo build --release
